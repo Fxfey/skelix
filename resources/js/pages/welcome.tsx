@@ -1,3 +1,4 @@
+import { SkelixLogo } from '@/components/skelix-logo';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 
@@ -38,7 +39,9 @@ export default function Welcome() {
                         )}
                     </nav>
                 </header>
-                <div className="flex w-full items-center justify-center bg-amber-50 opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0"></div>
+                <div className="flex w-full items-center justify-center bg-amber-50 opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
+                    <SkelixLogo size="lg" color="black" />
+                </div>
             </div>
         </>
     );
