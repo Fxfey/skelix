@@ -57,15 +57,35 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+
+    /** Declaring sx (skelix) prefixed variables to not interfere with existing colors **/
+    --color-sx-primary: var(--sx-bg-primary);
+    --color-sx-secondary: var(--sx-bg-secondary);
+    --color-sx-tertiary: var(--sx-bg-tertiary);
+
+    --color-sx-accent-primary: var(--sx-accent-primary);
+    --color-sx-accent-hover: var(--sx-accent-hover);
+
+    --color-sx-text-primary: var(--sx-text-primary);
+    --color-sx-text-secondary: var(--sx-text-secondary);
+    --color-sx-text-tertiary: var(--sx-text-tertiary);
+
+    --color-sx-danger: var(--sx-danger);
+    --color-sx-success: var(--sx-success);
+    --color-sx-warning: var(--sx-warning);
+    --color-sx-info: var(--sx-info);
+
+    --color-sx-border-color: var(--sx-border-color);
+    --color-sx-shadow-color: var(--sx-shadow-color);
 }
 
 /*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+    The default border color has changed to `currentColor` in Tailwind CSS v4,
+    so we've added these compatibility styles to make sure everything still
+    looks the same as it did with Tailwind CSS v3.
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
+    If we ever want to remove these styles, we need to add an explicit border
+    color utility to any element that depends on these defaults.
 */
 @layer base {
     *,
@@ -111,6 +131,32 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
+
+    /** Declaring sx (skelix) prefixed variables to not interfere with existing colors **/
+
+    /* Background Colors */
+    --sx-bg-primary: oklch(0.15 0.02 263); /* Dark background */
+    --sx-bg-secondary: oklch(0.2 0.02 263); /* Slightly lighter background */
+    --sx-bg-tertiary: oklch(0.25 0.02 263); /* Card/panel background */
+
+    /* Accent Colors */
+    --sx-accent-primary: oklch(0.63 0.26 265); /* Primary accent/brand color - blue */
+    --sx-accent-hover: oklch(0.68 0.24 265); /* Lighter accent for hover states */
+
+    /* Text Colors */
+    --sx-text-primary: oklch(0.97 0.01 263); /* Main text color - almost white */
+    --sx-text-secondary: oklch(0.76 0.02 263); /* Secondary text color - light gray */
+    --sx-text-tertiary: oklch(0.58 0.02 263); /* Dimmed text color - darker gray */
+
+    /* Feedback Colors */
+    --sx-danger: oklch(0.65 0.27 25); /* Error/danger - vibrant red */
+    --sx-success: oklch(0.68 0.19 155); /* Success - vibrant green */
+    --sx-warning: oklch(0.8 0.2 80); /* Warning - amber */
+    --sx-info: oklch(0.62 0.22 245); /* Info - blue */
+
+    /* Border & Shadow */
+    --sx-border-color: oklch(0.3 0.02 263); /* Border color */
+    --sx-shadow-color: oklch(0.05 0.02 263 / 0.5); /* Shadow with transparency */
 }
 
 .dark {

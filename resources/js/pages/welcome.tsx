@@ -7,40 +7,53 @@ export default function Welcome() {
 
     return (
         <>
-            <Head title="Welcome">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-            </Head>
-            <div className="flex min-h-screen flex-col items-center bg-[#FDFDFC] p-6 text-[#1b1b18] lg:justify-center lg:p-8 dark:bg-[#0a0a0a]">
-                <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
-                    <nav className="flex items-center justify-end gap-4">
-                        {auth.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <>
-                                <Link
-                                    href={route('login')}
-                                    className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A]"
-                                >
-                                    Log in
-                                </Link>
-                                <Link
-                                    href={route('register')}
-                                    className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
-                                >
-                                    Register
-                                </Link>
-                            </>
-                        )}
-                    </nav>
-                </header>
-                <div className="flex w-full items-center justify-center bg-amber-50 opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <SkelixLogo size="lg" color="black" />
+            <Head title="Skelix"></Head>
+            <div className="flex h-fit h-screen w-full flex-col items-center justify-center p-6 transition-opacity duration-750 starting:opacity-0">
+                {/* Project Info Section */}
+                <SkelixLogo size="md" color="white" />
+                <div className="my-8 max-w-md text-center">
+                    <p className="mb-6 text-lg">
+                        A lightweight, headless CMS (content management system) built for developers who value simplicity and performance.
+                    </p>
+
+                    <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                        <div className="bg-sx-secondary rounded p-4">
+                            <h3 className="mb-2 text-lg font-medium">Headless</h3>
+                            <p className="text-sm">Content delivery via API, frontend agnostic</p>
+                        </div>
+                        <div className="bg-sx-secondary rounded p-4">
+                            <h3 className="mb-2 text-lg font-medium">Developer-First</h3>
+                            <p className="text-sm">Built for flexibility and customization</p>
+                        </div>
+                    </div>
+                    <p className="text-sx-tertiary text-sm">Personal project by Ben 'Fxfey' - Open source & non-commercial</p>
+                </div>
+                <div className="mt-5 flex w-65 flex-wrap gap-3 overflow-hidden">
+                    {/* How It Works Button */}
+                    <Link
+                        href={''}
+                        className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
+                    >
+                        How it works
+                    </Link>
+
+                    {/* GitHub Link */}
+                    <a
+                        href="/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
+                    >
+                        <span>GitHub</span>
+                    </a>
+
+                    {/* Login */}
+                    <Link
+                        href={route('login')}
+                        className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
+                    >
+                        Log in
+                    </Link>
                 </div>
             </div>
         </>

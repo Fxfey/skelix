@@ -1,6 +1,6 @@
 interface SkelixLogoProps {
     size: 'sm' | 'md' | 'lg';
-    color: string;
+    color: 'white' | 'black';
 }
 
 export function SkelixLogo({ size, color }: Readonly<SkelixLogoProps>) {
@@ -24,11 +24,18 @@ export function SkelixLogo({ size, color }: Readonly<SkelixLogoProps>) {
 
     const { height, width, viewBox } = sizeMap[size];
 
+    const colorMap = {
+        white: 'oklch(0.97 0.01 263)',
+        black: 'oklch(0.15 0.02 263)',
+    };
+
+    const mappedColor = colorMap[color];
+
     return (
         <svg width={width} height={height} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
             <path
-                fill={color}
-                stroke={color}
+                fill={mappedColor}
+                stroke={mappedColor}
                 strokeWidth="1"
                 d="M 141.51,8.30
             C 139.48,8.30 138.47,7.28 138.47,5.23
