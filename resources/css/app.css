@@ -59,24 +59,38 @@
     --color-sidebar-ring: var(--sidebar-ring);
 
     /** Declaring sx (skelix) prefixed variables to not interfere with existing colors **/
-    --color-sx-primary: var(--sx-bg-primary);
-    --color-sx-secondary: var(--sx-bg-secondary);
-    --color-sx-tertiary: var(--sx-bg-tertiary);
+    --color-sx-primary-0: var(--sx-primary-0);
+    --color-sx-primary-10: var(--sx-primary-10);
+    --color-sx-primary-20: var(--sx-primary-20);
+    --color-sx-primary-30: var(--sx-primary-30);
+    --color-sx-primary-40: var(--sx-primary-40);
+    --color-sx-primary-50: var(--sx-primary-50);
 
-    --color-sx-accent-primary: var(--sx-accent-primary);
-    --color-sx-accent-hover: var(--sx-accent-hover);
+    --color-sx-surface-0: var(--sx-surface-0);
+    --color-sx-surface-10: var(--sx-surface-10);
+    --color-sx-surface-20: var(--sx-surface-20);
+    --color-sx-surface-30: var(--sx-surface-30);
+    --color-sx-surface-40: var(--sx-surface-40);
+    --color-sx-surface-50: var(--sx-surface-50);
 
-    --color-sx-text-primary: var(--sx-text-primary);
-    --color-sx-text-secondary: var(--sx-text-secondary);
-    --color-sx-text-tertiary: var(--sx-text-tertiary);
+    --color-sx-tonal-0: var(--sx-tonal-0);
+    --color-sx-tonal-10: var(--sx-tonal-10);
+    --color-sx-tonal-20: var(--sx-tonal-20);
+    --color-sx-tonal-30: var(--sx-tonal-30);
+    --color-sx-tonal-40: var(--sx-tonal-40);
+    --color-sx-tonal-50: var(--sx-tonal-50);
 
     --color-sx-danger: var(--sx-danger);
-    --color-sx-success: var(--sx-success);
-    --color-sx-warning: var(--sx-warning);
-    --color-sx-info: var(--sx-info);
+    --color-sx-danger-muted: var(--sx-danger-muted);
 
-    --color-sx-border-color: var(--sx-border-color);
-    --color-sx-shadow-color: var(--sx-shadow-color);
+    --color-sx-warning: var(--sx-warning);
+    --color-sx-warning-muted: var(--sx-warning-muted);
+
+    --color-sx-success: var(--sx-success);
+    --color-sx-success-muted: var(--sx-success-muted);
+
+    --color-sx-info: var(--sx-info);
+    --color-sx-info-muted: var(--sx-info-muted);
 }
 
 /*
@@ -134,29 +148,46 @@
 
     /** Declaring sx (skelix) prefixed variables to not interfere with existing colors **/
 
-    /* Background Colors */
-    --sx-bg-primary: oklch(0.15 0.02 263); /* Dark background */
-    --sx-bg-secondary: oklch(0.2 0.02 263); /* Slightly lighter background */
-    --sx-bg-tertiary: oklch(0.25 0.02 263); /* Card/panel background */
+    /** Theme primary colors */
+    --sx-primary-0: #c4baaf; /* Main accent color for important buttons, highlights, and focal points */
+    --sx-primary-10: #cac1b8; /* Slightly lighter accent for hover states on primary elements */
+    --sx-primary-20: #d1c9c0; /* Secondary accent for less important interactive elements */
+    --sx-primary-30: #d7d1c9; /* Subdued accent for tertiary elements and subtle indicators */
+    --sx-primary-40: #ded8d2; /* Light accent for borders, dividers, and form outlines */
+    --sx-primary-50: #e5e0db; /* Very light accent for text on dark backgrounds or subtle highlights */
 
-    /* Accent Colors */
-    --sx-accent-primary: oklch(0.63 0.26 265); /* Primary accent/brand color - blue */
-    --sx-accent-hover: oklch(0.68 0.24 265); /* Lighter accent for hover states */
+    /** Theme surface colors */
+    --sx-surface-0: #070b14; /* Main background color for the application (darkest) */
+    --sx-surface-10: #212329; /* Background for main content areas and cards */
+    --sx-surface-20: #383a40; /* Background for elevated components like modals or dropdowns */
+    --sx-surface-30: #515358; /* Background for interactive elements or hover states */
+    --sx-surface-40: #6c6d72; /* Background for selected states or highlighted sections */
+    --sx-surface-50: #87898c; /* Background for the highest elevation elements or tooltips */
 
-    /* Text Colors */
-    --sx-text-primary: oklch(0.97 0.01 263); /* Main text color - almost white */
-    --sx-text-secondary: oklch(0.76 0.02 263); /* Secondary text color - light gray */
-    --sx-text-tertiary: oklch(0.58 0.02 263); /* Dimmed text color - darker gray */
+    /** Theme tonal surface colors */
+    --sx-tonal-0: #1b1c21; /* Alternative main background with slightly warmer tone */
+    --sx-tonal-10: #303136; /* Alternative content background for different sections */
+    --sx-tonal-20: #46474c; /* Background for secondary interactive elements */
+    --sx-tonal-30: #5e5f63; /* Background for toggle states or alternative selections */
+    --sx-tonal-40: #77777b; /* Background for disabled elements or secondary controls */
+    --sx-tonal-50: #909194; /* Background for system messages or status indicators */
 
-    /* Feedback Colors */
-    --sx-danger: oklch(0.65 0.27 25); /* Error/danger - vibrant red */
-    --sx-success: oklch(0.68 0.19 155); /* Success - vibrant green */
-    --sx-warning: oklch(0.8 0.2 80); /* Warning - amber */
-    --sx-info: oklch(0.62 0.22 245); /* Info - blue */
+    /** Feedback colors **/
+    /* Danger - A deep red with enough contrast against dark backgrounds but not too harsh */
+    --sx-danger: #e15a5a; /* Main danger color for critical errors, deletions, and warnings */
+    --sx-danger-muted: #a73e3e; /* Subtle version for backgrounds or less urgent danger states */
 
-    /* Border & Shadow */
-    --sx-border-color: oklch(0.3 0.02 263); /* Border color */
-    --sx-shadow-color: oklch(0.05 0.02 263 / 0.5); /* Shadow with transparency */
+    /* Success - A de-saturated teal-green that feels natural with the warm/cool contrast */
+    --sx-success: #4caf93; /* Main success color for confirmations and completed actions */
+    --sx-success-muted: #367a68; /* Subtle version for backgrounds or secondary success indicators */
+
+    /* Warning - A warm amber that complements the beige primary colors */
+    --sx-warning: #e9b949; /* Main warning color for important notices and cautions */
+    --sx-warning-muted: #b08e37; /* Subtle version for backgrounds or less critical warnings */
+
+    /* Info - A cool blue-gray that works with the surface colors but stands out */
+    --sx-info: #60a5fa; /* Main info color for general notifications and help */
+    --sx-info-muted: #4878b5; /* Subtle version for backgrounds or secondary information */
 }
 
 .dark {

@@ -25,8 +25,8 @@ export function SkelixLogo({ size, color }: Readonly<SkelixLogoProps>) {
     const { height, width, viewBox } = sizeMap[size];
 
     const colorMap = {
-        white: 'oklch(0.97 0.01 263)',
-        black: 'oklch(0.15 0.02 263)',
+        white: '#c4baaf',
+        black: '#070b14',
     };
 
     const mappedColor = colorMap[color];
