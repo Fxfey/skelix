@@ -1,6 +1,37 @@
 import { SkelixLogo } from '@/components/skelix-logo';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { Code, Layers, Send, SquareArrowOutUpRight, StickyNote } from 'lucide-react';
+import { ReactNode } from 'react';
+
+type calloutCard = {
+    icon: ReactNode;
+    title: string;
+    body: string;
+};
+
+const calloutCards: calloutCard[] = [
+    {
+        icon: <Layers />,
+        title: 'Headless Architecture',
+        body: 'Content delivery via API, decoupled from presentation',
+    },
+    {
+        icon: <Send />,
+        title: 'API-First Design',
+        body: 'Ready-made endpoints for seamless content integration',
+    },
+    {
+        icon: <StickyNote />,
+        title: 'Content Modeling',
+        body: 'Create custom blueprints tailored to your exact needs',
+    },
+    {
+        icon: <Code />,
+        title: 'Flexible Content',
+        body: 'Raw content delivery without styling constraints',
+    },
+];
 
 export default function Welcome() {
     const { auth } = usePage<SharedData>().props;
@@ -8,66 +39,40 @@ export default function Welcome() {
         return (
             <>
                 <Head title="Skelix"></Head>
-                <div className="bg-sx-surface-0 text-sx-primary-50 flex h-screen w-full flex-col items-center justify-center p-6 transition-opacity duration-750 starting:opacity-0">
+                <div className="bg-sx-surface-0 text-sx-primary-50 flex min-h-screen w-full flex-col items-center justify-center p-6 transition-opacity duration-750 starting:opacity-0">
                     {/* Project Info Section */}
                     <SkelixLogo size="md" color="white" />
                     <div className="my-8 max-w-lg text-center">
-                        <p className="mb-6 text-lg">
+                        <p className="text-md mb-6">
                             A lightweight, headless CMS (content management system) built for developers who value simplicity and performance.
                         </p>
-
-                        <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-                            <div className="bg-sx-surface-10 rounded p-4">
-                                <h3 className="mb-2 text-lg font-medium">Headless Architecture</h3>
-                                <p className="text-sm">Content delivery via API, decoupled from presentation</p>
-                            </div>
-                            <div className="bg-sx-surface-10 rounded p-4">
-                                <h3 className="mb-2 text-lg font-medium">API-First Design</h3>
-                                <p className="text-sm">Ready-made endpoints for seamless content integration</p>
-                            </div>
-                            <div className="bg-sx-surface-10 rounded p-4">
-                                <h3 className="mb-2 text-lg font-medium">Content Modeling</h3>
-                                <p className="text-sm">Create custom blueprints tailored to your exact needs</p>
-                            </div>
-                            <div className="bg-sx-surface-10 rounded p-4">
-                                <h3 className="mb-2 text-lg font-medium">Flexible Content</h3>
-                                <p className="text-sm">Raw content delivery without styling constraints</p>
-                            </div>
+                        <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+                            {calloutCards.map((card) => (
+                                <div
+                                    key={card.title}
+                                    className="bg-sx-surface-10 border-sx-primary-0 flex min-h-22 flex-col rounded-sm border-1 px-5 py-2 text-left"
+                                >
+                                    <span className="my-2">{card.icon}</span>
+                                    <h3 className="mb-1 text-lg font-medium">{card.title}</h3>
+                                    <p className="mb-1 text-sm">{card.body}</p>
+                                </div>
+                            ))}
                         </div>
-                        <p className="text-sx-tertiary text-md font-medium">
-                            Personal project by Ben 'Fxfey' Live example on my portfolio
-                            <a href="https://www.fxfey.dev" target="_blank" rel="noopener noreferrer" className="hover:text-sx-accent-hover">
-                                {' '}
-                                <span className="hover:text-sx-primary-0">Here</span>
-                            </a>
-                        </p>
-                    </div>
-                    <div className="mt-5 flex w-65 flex-wrap gap-3 overflow-hidden">
-                        {/* How It Works Button */}
-                        <Link
-                            href={''}
-                            className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
-                        >
-                            How it works
-                        </Link>
+                        <div className="flex justify-center">
+                            <Link href={''} className="bg-sx-surface-20 mb-6 rounded-sm px-2 py-1 text-xl font-medium">
+                                How it works
+                            </Link>
+                        </div>
 
-                        {/* GitHub Link */}
+                        <p className="text-sx-surface-20 text-md font-medium">A passion project by Ben 'Fxfey'</p>
                         <a
-                            href="/"
+                            href="https://www.fxfey.dev"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
+                            className="bg-sx-surface-20 mx-auto mt-2 flex w-fit items-center justify-center gap-2 rounded-sm px-2 py-2"
                         >
-                            <span>GitHub</span>
+                            Live Demo <SquareArrowOutUpRight size={18} />
                         </a>
-
-                        {/* Login */}
-                        <Link
-                            href={route('login')}
-                            className="bg-sx-tertiary hover:bg-sx-accent-hover flex h-12 w-full items-center justify-center rounded py-2 text-center text-2xl font-medium transition-colors duration-500"
-                        >
-                            Log in
-                        </Link>
                     </div>
                 </div>
             </>
